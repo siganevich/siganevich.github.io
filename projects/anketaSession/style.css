@@ -1,0 +1,25 @@
+.name-field
+{
+    font-weight: bold;
+    font-size: 22px;
+    width: 200px;
+}
+.value-field
+{
+    font-size: 18px; 
+}
+.description
+{
+	font-family: Times New Roman;
+	font-weight: bold;
+	font-size: calc(15px + 0.3vw);
+	font-style: italic; 
+}
+.my-form
+{
+	margin-left: 5%;
+	margin-top: 20px;
+	width: 50%;
+	max-width: 500px;
+}
+
