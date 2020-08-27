@@ -1,0 +1,23 @@
+		thead
+		{
+			font-size: 25px;
+			font-weight: bold;
+		}
+		tbody
+		{
+			font-size: 22px;
+		}
+		.category
+		{
+			font-size: 20px;
+		}
+		.btn-delete
+		{
+			font-size: 20px; 
+		}
+		.btn-add
+		{
+			font-size: 20px; 
+			margin-left: 5%; 
+			margin-top: 10px;
+		}

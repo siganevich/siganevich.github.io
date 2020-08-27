@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="RU">
+<head style>
+	<meta charset="UTF-8">
+
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css" type="text/css"> 
+
+	<title>products</title>
+</head>
+<body>
+	<table style="width: 90%; margin-left: 5%;" class="table table-dark table-striped">
+		<thead class="thead-light">
+			<tr>
+				<td style="width: 20%;">Name</td>
+				<td style="width: 17%;">Price</td>
+				<td style="width: 17%;">Weight</td>
+				<td style="width: 20%">Category</td>
+				<td style="width: 16%;"></td>
+			</tr>
+		</thead>
+		<tbody id="data">
+		</tbody>
+	</table>
+	<button class="btn-add btn-success" data-toggle="modal">Добавить</button>
+
+	<div class="modal fade" id="exampleModal" aria-hidden="true" indexElem="-1">
+	  	<div class="modal-dialog">
+	    	<div class="modal-content">
+	      		<div class="modal-header">
+	        		<h5 class="modal-title">New product</h5>
+	      		</div>
+	      		<div class="modal-body">
+	      			<table class="table-light">
+	      				<tr>
+	      					<td style="width: 100px;">Name</td>
+	      					<td><input type="text" id="name-in-modal"></td>
+		        		</tr>
+		        		<tr>
+	      					<td>Price</td>
+	      					<td><input type="text" id="price-in-modal"></td>
+		        		</tr>
+		        		<tr>
+	      					<td>Weight</td>
+	      					<td><input type="text" id="weight-in-modal"></td>
+		        		</tr>
+		        		<tr>
+	      					<td>Category</td>
+	      					<td><div class="category" id="category-in-modal"></div></td>
+		        		</tr>
+	        		</table>
+	      		</div>
+	      		<div class="modal-footer">
+	        		<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+	        		<button type="button" class="btn btn-primary btn-add-in-modal" data-dismiss="modal">Save changes</button>
+	      		</div>
+	    	</div>
+	  	</div>
+	</div>
+
+ 	<script>
+		document.querySelector('tbody').onclick = click_on_cell;
+		var array_category = ["Конфеты", "Фрукты", "Овощи", "Другое"];
+		
+		$(document).ready
+		(
+			function()
+			{
+				$("button.btn-add-in-modal").click(add_to_table);
+				$("button.btn-delete").click(click_to_del);
+				$("button.btn-add").click(open_modal);
+				
+				document.getElementById("category-in-modal").appendChild(CreateComboBox());
+			}
+		);
+
+		function click_on_cell(evt)
+		{
+			let cell = event.target;
+			if (cell.tagName.toLowerCase() != 'td')
+				return;
+
+			let class_cell = cell.getAttribute("class");
+			
+			if(class_cell != "name" && class_cell != "price" && class_cell != "weight" && class_cell != "category") 
+				return;
+
+			row = cell.parentElement;
+
+			open_modal(row);
+		}
+
+		function add_to_table()
+		{
+
+			let table = document.getElementById("data");
+
+			let new_row;
+			if (document.getElementById("exampleModal").getAttribute("indexElem") == "-1")
+			{
+				new_row = document.createElement("tr");
+				table.appendChild(new_row);
+			}
+			else
+			{
+				let attr = document.getElementById("exampleModal").getAttribute("indexElem");
+				new_row = table.insertRow(attr);
+				table.deleteRow(attr-1);
+			}
+			
+			let cell1 = document.createElement("td");
+			cell1.setAttribute("class", "name");
+			cell1.append($("#name-in-modal").val());
+			new_row.appendChild(cell1);
+
+			let cell2 = document.createElement("td");
+			cell2.setAttribute("class", "price");
+			cell2.append($("#price-in-modal").val());
+			new_row.appendChild(cell2);
+
+			let cell3 = document.createElement("td");
+			cell3.setAttribute("class", "weight");
+			cell3.append($("#weight-in-modal").val());
+			new_row.appendChild(cell3);
+
+			let cell4 = document.createElement("td");
+			cell4.setAttribute("class", "category");
+			cell4.append($('#category-in-modal option:selected').text());
+			new_row.appendChild(cell4);
+
+			let cell5 = document.createElement("td");
+			let btnDelete = document.createElement("button");
+			btnDelete.setAttribute("class", "btn-delete btn-danger");
+			btnDelete.innerText = "Удалить";
+			btnDelete.onclick = click_to_del;
+			cell5.appendChild(btnDelete);
+			new_row.appendChild(cell5);
+		}
+
+		function click_to_del(evt)
+		{
+			let btn = event.currentTarget;
+
+			let row = event.currentTarget.parentElement.parentElement;
+			row.style.backgroundColor = "red";
+
+			row.parentElement.removeChild(row);
+		}
+
+		function CreateComboBox()
+		{
+			var combobox = document.createElement("select");
+			combobox.name = "category_data";
+			combobox.style.width = "200px";
+
+			for (let ind in array_category)
+				combobox.options[ind] = new Option(array_category[ind], array_category[ind]);
+			return combobox;
+		}
+
+		function open_modal(val)
+		{
+			if (val.type == "click")
+			{
+				document.getElementById("exampleModal").setAttribute("indexElem", "-1");
+				fill_modal("", "", "", "Конфеты");
+			}
+			else
+			{
+				row = val;
+				document.getElementById("exampleModal").setAttribute("indexElem", row.rowIndex);
+				fill_modal(row.childNodes[0].innerText, row.childNodes[1].innerText, row.childNodes[2].innerText, row.childNodes[3].innerText);
+			}
+			$("#exampleModal").modal("show");
+		}
+
+		function fill_modal(name, price, weight, category)
+		{
+			$("#name-in-modal").val(name);
+			$("#price-in-modal").val(price);
+			$("#weight-in-modal").val(weight);
+			$('#category-in-modal select option[value=' + category + ']').prop('selected', true);
+		}
+
+	</script> 
+
+	<script src="./bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
