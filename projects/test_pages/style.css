@@ -1,0 +1,60 @@
+		.my-divider
+		{
+			height: 60px;
+		}
+		.body-site
+		{
+			margin-left: 7%;
+			margin-right: 7%;
+		}
+		.img-film
+    	{
+    		width: 350px;
+    		height: 500px;
+    		margin-bottom: 20px;
+    	}
+    	.description
+    	{
+			font-family: Snell Roundhand; 
+    		font-size: calc(12px + 0.65vw); 
+    		font-style: italic;    		
+    		display: none;
+    		margin-bottom: 10px;
+    	}
+    	.my-text-navbar
+    	{
+    		font-size: 15px; 
+    		font-weight: bold;
+    		margin: 0px; 
+    		color: grey;
+    	}
+    	.my-article
+    	{
+    		font-family: Snell Roundhand; 
+    		font-size: calc(12px + 0.65vw); 
+    		font-style: italic;
+    		justify-content: center;
+    	}
+    	.container-article
+    	{
+    		display: flex; 
+    		flex-direction: row;
+    		align-items: center;
+    	}
+    	.resizeimg
+    	{
+    		max-width: 40%; 
+    		margin: 9px; 
+    	}
+    	h1
+    	{
+    		margin-top: 25px;
+    		font-family: Snell Roundhand;
+    		font-style: italic;
+    	}
+		.modal-dialog
+    	{
+    		max-width: 80%;
+    		max-height: 80%;
+    	}
+

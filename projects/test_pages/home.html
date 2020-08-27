@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="RU">
+<head style>
+	<meta charset="UTF-8">
+	    <!-- Bootstrap CSS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css" type="text/css"> 
+
+	<title>home</title>
+</head>
+<body>
+	<!-- My navbar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
+		<a class="navbar-brand ml-4 h4" href="#">yourLOGO</a>
+
+		<button class="navbar-toggler mx-5" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+	    	<span class="navbar-toggler-icon"></span>
+	  	</button>
+
+	  	<div class="collapse navbar-collapse" id="navbarContent">
+	    	<ul class="navbar-nav mx-auto">
+	      		<li class="nav-item active">
+	        		<a class="nav-link h4 mx-2" href="#">Home <span class="sr-only">(current)</span></a>
+	      		</li>
+	      		<li class="nav-item">
+	        		<a class="nav-link h4 mx-2" href="#">About Us</a>
+	      		</li>
+	      		<li class="nav-item">
+	        		<a class="nav-link h4 mx-2" href="#">Contacts</a>
+	      		</li>
+	      		<li class="nav-item dropdown">
+	        		<a class="nav-link dropdown-toggle h4 mx-2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+	        		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          			<a class="dropdown-item" href="#">Article 1</a>
+	         		 	<a class="dropdown-item" href="#">Article 2</a>
+	          			<div class="dropdown-divider"></div>
+	          			<a class="dropdown-item" href="#">News</a>
+	        		</div>
+	      		</li>
+	    	</ul>
+	    	<form class="form-inline mr-4">
+	      		<input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+	      		<button class="btn btn-outline-light my-2 h4" type="submit">Search</button>
+	    	</form>
+	  	</div>
+	</nav>
+	<div class="body-site bg-light">
+
+		<div class="my-divider"></div>
+		<div>
+			<nav class="navbar navbar-dark bg-dark justify-content-between">
+				<a class="navbar-brand ml-3" href="#">
+				    <p style="font-size: 40px; font-weight: bold">Hello<span style="color: grey;">World</span></p>
+				    <p style="font-size: 15px; font-weight: bold; color: grey;">a responsive simple template for your text</p>
+				</a>
+				<div style="width: 150px">
+				<p id="animatetext" class="d-none d-lg-block" style="font-style: italic; color: gray; font-size: 45px;">Welcome!</p>
+				</div>
+				<div class="navbar-nav">
+			  		<div>
+				      	<ul class="nav text-light pr-5">
+				        	<li class="nav-item">
+				        	 	<a class="nav-link ml-5" href="#" >Twitter</a>
+				        	</li>
+				        	<li class="nav-item">
+				          		<a class="nav-link ml-3" href="#">Facebook</a>
+				        	</li>
+				        	<li class="nav-item">
+				          		<a class="nav-link ml-3" href="#">Instagram</a>
+				        	</li>
+				      	</ul>
+				    </div>
+				</div>
+			</nav>
+		</div>
+
+		<div class="container-fluid" align="center">
+			<h1>Info</h1>
+			<div class="container-article">
+				<img class="resizeimg" src="img/img1.jpg">
+				<p class="my-article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida, sem et ullamcorper bibendum, mi orci dapibus dolor, at hendrerit odio leo et dolor. Curabitur Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec malesuada semper enim et aliquet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse eros sem, pharetra eu dui in, accumsan suscipit leo. Donec vel mauris lobortis, gravida lacus in, vulputate nisl. Curabitur varius auctor orci, eu scelerisque tortor scelerisque a. Suspendisse sed dolor ut mauris pretium eleifend eu ut diam. Sed et erat ligula. Morbi sem sapien, pretium ac congue sed, vulputate vitae ipsum. Ut scelerisque scelerisque blandit. Vivamus pellentesque sollicitudin arcu at ullamcorper.</p>
+			</div>
+
+			<h1>Movies</h1>
+			<div class="row">
+				<div class="col" id="col1">
+					<button class="btn-open-description"><img src="./img/film1.jpg" class="img-film"></button>
+					<div class="description"><p align="justify">После принятия образа аватара солдат Джейк Салли становится предводителем народа на`ви и берет на себя миссию по защите новых друзей от корыстных бизнесменов с Земли. Теперь ему есть за кого бороться — с Джейком его прекрасная возлюбленная Нейтири. Когда на Пандору возвращаются до зубов вооруженные земляне, Джейк готов дать им отпор.</p>
+						<button class="btn-primary btn-close-description">Закрыть описание</button></div>
+				</div>
+				<div class="col" id="col2">
+					<button class="btn-open-description"><img src="./img/film2.jpg" class="img-film"></button>
+					<div class="description"><p align="justify">Юная волшебница Малефисента вела уединенную жизнь в зачарованном лесу, окруженная сказочными существами, но однажды все изменилось… В её мир вторглись люди, которые принесли с собой разрушение и хаос. В пылу борьбы Малефисента наложила страшное заклятие на новорожденную дочь короля, прекрасную Аврору. Но, наблюдая за тем, как растет маленькая принцесса, Малефисента начинает сомневаться в правильности своего поступка — ведь, возможно, именно Аврора может вдохнуть новую жизнь в волшебное лесное царство.</p>
+						<button class="btn-primary btn-close-description">Закрыть описание</button></div>
+				</div>
+				<div class="col" id="col3">
+					<button class="btn-open-description"><img src="./img/film3.jpg" class="img-film"></button>
+					<div class="description"><p align="justify">Папа любит долгие прогулки в ненастную погоду. Мама считает, что черный цвет самый яркий. У детей кладбище — любимая площадка для игр. Бабушка выпивает пару капель яда перед сном. Вы все еще думаете, что ваши родственники странные? Знакомьтесь — семейка Аддамс.</p>
+					<button class="btn-primary btn-close-description">Закрыть описание</button></div>
+				</div>
+			</div>
+
+			<h1>Info2</h1>
+			<div class="container-article">
+				<p class="my-article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida, sem et ullamcorper bibendum, mi orci dapibus dolor, at hendrerit odio leo et dolor. Curabitur Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec malesuada semper enim et aliquet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse eros sem, pharetra eu dui in, accumsan suscipit leo. Donec vel mauris lobortis, gravida lacus in, vulputate nisl. Curabitur varius auctor orci, eu scelerisque tortor scelerisque a. Suspendisse sed dolor ut mauris pretium eleifend eu ut diam. Sed et erat ligula. Morbi sem sapien, pretium ac congue sed, vulputate vitae ipsum. Ut scelerisque scelerisque blandit. Vivamus pellentesque sollicitudin arcu at ullamcorper.</p>
+				<img class="resizeimg" src="img/img2.jpg">
+			</div>			
+		</div>
+		<hr/>
+		<div class="row mx-auto">
+			<div class="col-lg-3 mx-auto">
+				<img class="resizeimg" src="img/img3.jpg">
+				<p class="my-article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida, sem et ullamcorper bibendum, mi orci dapibus dolor, at hendrerit odio leo et dolor. Curabitur Orci varius natoque penatibus
+			</div>
+			<div class="col-lg-3 mx-auto">
+				<img class="resizeimg" src="img/img4.jpg">
+				<p class="my-article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida, sem et ullamcorper bibendum, mi orci dapibus dolor, at hendrerit odio leo et dolor. Curabitur Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+			</div>
+			<div class="col-lg-3 mx-auto">
+				<img class="resizeimg" src="img/img3.jpg">
+				<p class="my-article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida, 
+			</div>
+			<div class="col-lg-3 mx-auto">
+				<img class="resizeimg" src="img/img4.jpg">
+				<p class="my-article">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas gravida, sem et ullamcorper bibendum, mi orci dapibus dolor, at hendrerit odio leo et dolor. Curabitur Orci varius natoque penatibus 
+			</div>
+		</div>
+
+	</div>
+    <!-- Footer -->
+	<footer class="page-footer bg-dark text-light pt-4">
+  		<div class="container-fluid text-center">
+    		<div class="row">
+      			<div class="col">
+        			<h5 class="text-uppercase">Footer Content</h5>
+        			<p>Here you can use rows and columns to organize your footer content.</p>
+      			</div>
+      			<hr class="clearfix w-100 d-md-none pb-3">
+      			<div class="col">
+        			<h5 class="text-uppercase">Links</h5>
+        			<ul class="list-unstyled">
+          				<li>Link 1</li>
+          				<li>Link 2</li>
+				        <li>Link 3</li>
+          				<li>Link 4</li>
+       		 		</ul>
+      			</div>
+      			<div class="col">
+       				<h5 class="text-uppercase">Links</h5>
+        			<ul class="list-unstyled">
+          				<li>Link 1</li>
+          				<li>Link 2</li>
+				        <li>Link 3</li>
+          				<li>Link 4</li>
+        			</ul>
+     	 		</div>
+    		</div>
+  		</div>
+
+  		<div class="footer-copyright text-center py-3">© 2020 Copyright: Author-D.Siganevich</div>
+  	</footer>
+
+	<div class="modal fade" id="exampleModal" aria-hidden="true" indexElem="-1">
+		<div id="mymodal" class="modal-dialog">
+			<div class="modal-content">
+ 			    <img width="100%" id="bigimg">
+ 			</div>
+			<button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close image</button>
+		</div>
+	</div>
+
+
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+    	$(document).ready(
+    	function () 
+    	{  
+		    setInterval(function()
+		    {
+		        $('#animatetext').animate({'font-size':"-=12px"},"slow");            
+		        $('#animatetext').animate({'font-size':"+=12px"},"slow");
+		    }, 0);  
+		});
+    </script>
+
+    <script>
+		$(".btn-open-description").click(
+			function(event)
+			{
+				let evt = event || window.event;
+				parentCol = evt.currentTarget.parentElement;
+				$("#" + parentCol.id + " .description").slideDown();
+			}
+		)
+		$(".btn-close-description").click(
+			function(event)
+			{
+				let evt = event || window.event;
+				parentCol = evt.currentTarget.parentElement.parentElement;
+				$("#" + parentCol.id + " .description").slideUp();
+			}
+		)
+	</script>
+
+	<script>
+
+		$("img.resizeimg").click(
+			function(event)
+			{
+				let evt = event || window.event;
+				let new_src = evt.currentTarget.getAttribute("src").replace('.jpg', '_big.jpg');
+
+				let img = new Image();
+				img.src = new_src;
+
+				img.onload = function() 
+				{
+				  	document.getElementById('mymodal').style.width = this.width + "px";
+				}
+
+				document.getElementById('bigimg').src =  new_src;
+
+				$("#exampleModal").modal("show");			
+			});
+	</script>
+
+</body>
+</html>
