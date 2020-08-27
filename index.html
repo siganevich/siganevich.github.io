@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="RU" style="height: 100%">
+<head style>
+	<meta charset="UTF-8">
+	    <!-- Bootstrap CSS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css" type="text/css"> 
+
+	<title>home</title>
+</head>
+<body style="height: 100%; margin: 0px;">
+		<div class="main-container">
+
+			<img class="back-main" src="./img/back_main.jpg">
+		</div>
+			<div id="animate" class="inscription-main">Welcome!</div>
+			<div class="links-container">
+				<a id="animate2" href="./my_projects.html" class="link">My projects</a>
+				<a href="./about_me.html" class="link">About me</a>
+				<a href="./contact.html" class="link">Contact</a>
+			</div>
+
+    <script src="./bootstrap/js/bootstrap.min.js" class="back-main"></script>
+    <script>
+        $( document ).ready(function()
+        {
+            $('#animate').fadeIn(1000);
+            setTimeout(() => $('.link').show(1000), 500);
+        });
+        </script>
+</body>
+</html>
