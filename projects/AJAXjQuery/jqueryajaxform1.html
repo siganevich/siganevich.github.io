@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="RU">
+<head style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <title>form4</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body>
+	<label class="description" for="booktheme">Input theme of books</label>
+	<input type="text" id="booktheme"/>
+	<button id="btn1" onclick="btnClick()">Click for Ajax</button>
+	<div id="content"></div>
+	<script>
+		function btnClick()
+		{
+			$("button#btn1").attr("disabled", "disabled");
+			let theme = $("input#booktheme").val();
+			$.ajax
+			(
+				"jqueryajaxform2.php?booktheme=" + theme,
+				{
+					success : function(response, textStatus, jqXHR)
+					{
+						let result = response.getElementsByTagName("result").item(0).firstChild.data;
+						let content = document.getElementById("content");
+						if (result == 0)
+						{
+							let method = response.getElementsByTagName("method").item(0).firstChild.data
+							var data = response.getElementsByTagName("data").item(0);
+							eval(method + "(data)");
+						}
+						else
+							content.innerHTML = "Error result : " + result;
+					}
+				}
+			);
+		}
+
+		function getBooks(response)
+		{
+			var div = document.getElementById('content');
+            div.innerHTML = "";
+            var table = document.createElement("table");
+            table.setAttribute("border", "1");
+            var arrBooks = response.getElementsByTagName("book");
+            for (var i = 0; i < arrBooks.length; i++)
+            {
+                var book = arrBooks.item(i);
+
+                // ---Извлечение значения элементов книги-----
+                var name = book.getElementsByTagName("name").item(0).firstChild.data;
+                var izd = book.getElementsByTagName("izd").item(0).firstChild.data;
+                var category = book.getElementsByTagName("category").item(0).firstChild.data;
+                var themes = book.getElementsByTagName("themes").item(0).firstChild.data;
+
+                // ---Создание строки таблицы и заполнение ее данными--
+                var row = table.insertRow(i);
+                row.insertCell(0).appendChild(document.createTextNode(name));
+                row.insertCell(1).appendChild(document.createTextNode(izd));
+                row.insertCell(2).appendChild(document.createTextNode(category));
+                row.insertCell(3).appendChild(document.createTextNode(themes));
+            }
+            div.appendChild(table);
+		}
+	</script>
+</body>
+</html>
